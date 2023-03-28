@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: project_4-deployment
+  labels:
+    app: project_4
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: project_4
+  template:
+    metadata:
+      labels:
+        app: project_4
+    spec:
+      containers:
+      - name: nodeserver
+        image: ganeshkarthik/project_4:latest
+        ports:
+        - containerPort: 3000
